@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import ContactForm from "./ContactForm.astro";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}"
 );
@@ -8,20 +9,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <section class="py-20 flex md:flex-row flex-col px-4 md:px-0 gap-10 md:gap-0">
   <div class="flex flex-col gap-6 justify-start items-start md:w-1/2">
-    <h1 class="text-pblack">Hi, my name is Joaquín Sorolla</h1>
-    <p class="text-6xl font-bold">Duels with the sun are fewer.</p>
-    <p>
-      I am Joaquín Sorolla y Bastida, a Spanish painter. A prolific artist, I
-      left behind more than 2,200 cataloged works.
-    </p>
-    <a
-      rel="noopener noreferrer"
-      href="https://jramma.com"
-      target="_blank"
+    <p class="text-6xl font-bold">Makers gotta make.</p>
+    <p class="text-2xl font-bold">I am Jessica Canepa, a tech translator who likes to play with words and code.</p>
+    <button
+      onclick="document.getElementById('contact-modal').classList.remove('hidden')"
       class="bg-pgreen px-5 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition"
     >
-      Work together
-    </a>
+      Let's chat
+    </button>
   </div>
   <div
     class="md:w-1/2 object-contain flex items-center justify-center p-10 group"
@@ -57,7 +52,23 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             alt="Sorolla, photo wiki"
           />
         </div>
-      </div></a
-    >
+      </div>
+    </a>
   </div>
 </section>
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-card max-w-md w-full mx-4">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold">Get in Touch</h2>
+      <button
+        onclick="document.getElementById('contact-modal').classList.add('hidden')"
+        class="text-2xl font-bold hover:text-gray-600"
+      >
+        ×
+      </button>
+    </div>
+    <ContactForm />
+  </div>
+</div>

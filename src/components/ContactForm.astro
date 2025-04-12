@@ -1,0 +1,54 @@
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  class="flex flex-col gap-4 w-full max-w-md"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+  
+  <div class="flex flex-col gap-2">
+    <label for="name" class="font-semibold text-[#2B2D42]">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="px-4 py-2 border-2 border-[#2B2D42] rounded-lg shadow-card focus:shadow-hover transition focus:border-[#EF233C] focus:ring-2 focus:ring-[#EF233C] focus:ring-opacity-50"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="email" class="font-semibold text-[#2B2D42]">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="px-4 py-2 border-2 border-[#2B2D42] rounded-lg shadow-card focus:shadow-hover transition focus:border-[#EF233C] focus:ring-2 focus:ring-[#EF233C] focus:ring-opacity-50"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="message" class="font-semibold text-[#2B2D42]">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="4"
+      class="px-4 py-2 border-2 border-[#2B2D42] rounded-lg shadow-card focus:shadow-hover transition focus:border-[#EF233C] focus:ring-2 focus:ring-[#EF233C] focus:ring-opacity-50"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="bg-[#EF233C] text-white px-5 py-3 border-2 border-[#2B2D42] rounded-lg shadow-card hover:shadow-hover transition mt-4 hover:bg-[#D90429] focus:ring-2 focus:ring-[#EF233C] focus:ring-opacity-50"
+  >
+    Send Message
+  </button>
+</form> 
